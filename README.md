@@ -17,8 +17,9 @@ Construire un système NLP capable de classer automatiquement les commentaires e
 ## Résultats
 | Modèle | Accuracy | F1-score macro |
 |---|---:|---:|
-| Logistic Regression | 70,00 % | 0,7033 |
-| Linear SVM | 70,00 % | 0,7012 |
+| Logistic Regression | 70,00 % | 0,704714 |
+| Linear SVM | 73,33 % | 0.735017 |
+
 
 ## Limites
 Le dataset est de petite taille, ce qui limite la diversité des exemples et la robustesse de la classification.
