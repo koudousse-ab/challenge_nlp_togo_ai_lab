@@ -1,16 +1,34 @@
 # Classification de commentaires citoyens sur les services publics
 
-Ce projet porte sur la classification automatique de commentaires citoyens en trois catégories : Satisfaction, Insatisfaction et Suggestion.
-Le dataset contient 150 commentaires, répartis de manière équilibrée entre les trois classes.
-Les textes ont été mis en minuscules, nettoyés des caractères indésirables, tokenisés et traités avec une liste de stopwords français.
-Les éventuels termes éwé/mina ont été conservés afin de ne pas supprimer une information potentiellement utile à la classification.
-Les données ont été séparées en 80 % pour l'entraînement et 20 % pour le test, avec un random_state fixé à 42.
-La représentation TF-IDF a été utilisée avec des unigrammes et des bigrammes.
-Deux algorithmes ont été testés : Logistic Regression et Linear SVM.
-Les modèles ont été évalués avec l'Accuracy, le F1-score macro et les matrices de confusion.
-Logistic Regression a obtenu une Accuracy de 70,00 % et un F1-score macro de 0,7033.
-Linear SVM a obtenu une Accuracy de 70,00 % et un F1-score macro de 0,7012.
-L'analyse des erreurs montre des confusions liées notamment aux formulations courtes, ambiguës et à certains commentaires proposant des améliorations.
-Une limite importante est la faible taille du dataset, qui réduit la diversité des exemples disponibles pour l'apprentissage.
-Deux pistes d'amélioration sont l'augmentation du dataset et l'utilisation de modèles multilingues pré-entraînés.
-Pour reproduire le projet, installer les dépendances avec `pip install -r requirements.txt`, puis exécuter le notebook Jupyter.
+## Objectif
+Construire un système NLP capable de classer automatiquement les commentaires en **Satisfaction**, **Insatisfaction** et **Suggestion**.
+
+## Données
+- 150 commentaires, répartis équitablement entre les 3 catégories.
+- Prétraitement : minuscules, nettoyage, tokenisation et stopwords français.
+- Les termes éwé/mina sont conservés pour préserver l'information potentiellement utile.
+
+## Méthodologie
+- Séparation : 80 % entraînement / 20 % test (`random_state=42`).
+- Vectorisation : **TF-IDF** avec unigrammes et bigrammes.
+- Modèles : **Logistic Regression** et **Linear SVM**.
+- Évaluation : Accuracy, F1-score macro et matrices de confusion.
+
+## Résultats
+| Modèle | Accuracy | F1-score macro |
+|---|---:|---:|
+| Logistic Regression | 70,00 % | 0,7033 |
+| Linear SVM | 70,00 % | 0,7012 |
+
+## Limites
+Le dataset est de petite taille, ce qui limite la diversité des exemples et la robustesse de la classification.
+
+## Pistes d'amélioration
+- Augmenter le dataset, notamment avec davantage de commentaires éwé/mina.
+- Tester des modèles multilingues pré-entraînés comme CamemBERT, mBERT ou XLM-R.
+
+## Reproduction
+```bash
+pip install -r requirements.txt
+```
+Puis ouvrir et exécuter `notebook.ipynb`.
